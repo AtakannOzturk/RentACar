@@ -21,5 +21,15 @@ namespace RentACar.Business.Concrete
         {
             return _carDal.GetAll();
         }
+
+        public List<Car> GetCarsByBrandId(int brandId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> GetCarsByColorId(int colorId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

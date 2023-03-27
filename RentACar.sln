@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Entities", "RentAC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.DataAccess", "RentACar.DataAccess\RentACar.DataAccess.csproj", "{8FFE1E16-3E9B-4985-87AE-C33FF5AFA632}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Core", "RentACar.Core\RentACar.Core.csproj", "{3426A830-716E-4438-8030-A8DA2EDA8446}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8FFE1E16-3E9B-4985-87AE-C33FF5AFA632}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FFE1E16-3E9B-4985-87AE-C33FF5AFA632}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FFE1E16-3E9B-4985-87AE-C33FF5AFA632}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3426A830-716E-4438-8030-A8DA2EDA8446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3426A830-716E-4438-8030-A8DA2EDA8446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3426A830-716E-4438-8030-A8DA2EDA8446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3426A830-716E-4438-8030-A8DA2EDA8446}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
