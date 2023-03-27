@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Core.DataAccess.EntityFramework
+namespace RentACar.Core.DataAccess.EntityFramework 
 {
     public class EfEntityRepositoryBase
     {
