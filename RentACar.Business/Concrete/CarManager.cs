@@ -1,4 +1,5 @@
 ﻿using RentACar.Business.Abstract;
+using RentACar.Core.Utilities.Results;
 using RentACar.DataAccess.Abstract;
 using RentACar.Entities.Concrete;
 using RentACar.Entities.Dtos;
@@ -18,9 +19,25 @@ namespace RentACar.Business.Concrete
             _carDal = carDal;
 
         }
+
+        public IResult Add(Car car)
+        {
+            if (car.CarName.Length<2) 
+            {
+                return new ErrorResult("Araba ismi en az 2(iki) karakter olmalıdır");
+            }
+            _carDal.Add(car);
+            return new SuccessResult();
+        }
+
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
+        }
+
+        public Car GetById(int carid)
+        {
+            return _carDal.Get(c=>c.Id == carid);
         }
 
         public List<CarDetailDto> GetCarDetails()

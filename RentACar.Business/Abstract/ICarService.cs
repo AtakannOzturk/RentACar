@@ -1,4 +1,5 @@
-﻿using RentACar.Entities.Concrete;
+﻿using RentACar.Core.Utilities.Results;
+using RentACar.Entities.Concrete;
 using RentACar.Entities.Dtos;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace RentACar.Business.Abstract
         List<Car> GetCarsByBrandId(int brandId);
         List<Car> GetCarsByColorId(int colorId);
         List<CarDetailDto> GetCarDetails();
+        IResult Add(Car car);
+        Car GetById(int carid);
 
     }
 }
