@@ -1,5 +1,6 @@
 ﻿using RentACar.DataAccess.Abstract;
 using RentACar.Entities.Concrete;
+using RentACar.Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,9 +52,19 @@ namespace RentACar.DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        public List<Car> GetBlyd(int id)
+        public List<Car> GetById(int id)
         {
             return _cars.Where(c => c.Id == id).ToList();
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Car car)

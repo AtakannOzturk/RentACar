@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.DataAccess.Abstract
+namespace RentACar.Business.Abstract
 {
-    //public interface IUserDal: IEntityRepository<User>
-    //{
-    //}
+    public interface IBrandService
+    {
+        
+    }
 }

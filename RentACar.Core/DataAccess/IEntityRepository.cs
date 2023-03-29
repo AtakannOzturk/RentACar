@@ -12,7 +12,7 @@ namespace RentACar.Core.DataAccess
     {
         List<TEntity> GetAll(Expression<Func<TEntity,bool>> filter=null);
         TEntity Get(Expression<Func<TEntity, bool>> filter = null);
-        List<TEntity> GetBlyd(int id);
+        List<TEntity> GetById(int id);
         void Add(TEntity entity);
         void Delete(TEntity entity);
         void Update(TEntity entity);

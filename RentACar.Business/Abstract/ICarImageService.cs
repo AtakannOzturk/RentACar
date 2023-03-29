@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.DataAccess.Concrete.EntityFramework
+namespace RentACar.Business.Abstract
 {
-    public class EfUserDal
+    public interface ICarImageService
     {
     }
 }

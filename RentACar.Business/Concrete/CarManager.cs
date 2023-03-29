@@ -1,6 +1,7 @@
 ﻿using RentACar.Business.Abstract;
 using RentACar.DataAccess.Abstract;
 using RentACar.Entities.Concrete;
+using RentACar.Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,16 @@ namespace RentACar.Business.Concrete
         public CarManager(ICarDal carDal)
         {
             _carDal = carDal;
-            
+
         }
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            return _carDal.GetCarDetails();
         }
 
         public List<Car> GetCarsByBrandId(int brandId)
@@ -31,5 +37,7 @@ namespace RentACar.Business.Concrete
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }
