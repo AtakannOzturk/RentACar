@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Entities.Concrete
+namespace RentACar.Entities.Dtos
 {
-    public class Customer:IEntity
+    public class CustomerDetailDto:IDto
     {
-       
-        public int UserId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string CompanyName { get; set; }
     }
 }

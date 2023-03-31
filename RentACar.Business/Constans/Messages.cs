@@ -8,11 +8,12 @@ namespace RentACar.Business.Constans
 {
     public static class Messages
     {
-        internal static string CarNameInvalid="Araba ismi geçersiz";
-        internal static object Car;
-        internal static string CarAdded="Araba eklendi";
-        internal static string CarDeleted = "Araba silindi";
-        internal static string CarUpdated = "Araba güncellendi";
-        internal static string CarsListed = "Araba listelendi";
+        public static string CarNameInvalid="Araba ismi geçersiz";
+        public static object Car;
+        public static string CarAdded="Araba eklendi";
+        public static string CarDeleted = "Araba silindi";
+        public static string CarUpdated = "Araba güncellendi";
+        public static string CarsListed = "Araba listelendi";
+        internal static string RentalListed;
     }
 }
