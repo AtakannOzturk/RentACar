@@ -1,6 +1,8 @@
 ﻿using RentACar.Business.Abstract;
+using RentACar.Business.Constans;
 using RentACar.Core.Utilities.Results;
 using RentACar.DataAccess.Abstract;
+using RentACar.Business.Constans;
 using RentACar.Entities.Concrete;
 using RentACar.Entities.Dtos;
 using System;
@@ -24,10 +26,10 @@ namespace RentACar.Business.Concrete
         {
             if (car.CarName.Length<2) 
             {
-                return new ErrorResult("Araba ismi en az 2(iki) karakter olmalıdır");
+                return new ErrorResult(Messages.ProductNameInvalid);
             }
             _carDal.Add(car);
-            return new SuccessResult();
+            return new SuccessResult(Messages.ProductAdded);
         }
 
         public List<Car> GetAll()
