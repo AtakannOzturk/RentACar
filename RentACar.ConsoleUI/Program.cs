@@ -9,11 +9,19 @@ namespace RentACar.ConsoleUI
     {
         static void Main(string[] args)
         {
-            CarManager carManager= new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetCarDetails())
-            {
-                Console.WriteLine(car.CarName + "/" + car.ColorName + "/" + car.BrandName);
+            CarManager carManager = new CarManager(new EfCarDal());
 
+            var result = carManager.GetCarDetails();
+            if (result.Success == true)
+            {
+                foreach (var car in result.Data)
+                {
+                    Console.WriteLine(car.CarName + "/" + car.BrandName+ "/" + car.ColorName);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
         }
     

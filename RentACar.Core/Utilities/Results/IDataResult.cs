@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RentACar.Core.Utilities.Results
 {
-    public interface IDataResult<TEntity>
+    public interface IDataResult<T>:IResult
     {
-        TEntity Data { get; }
+        T Data { get; }
     }
 }
