@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.ConsoleUI", "RentACar.ConsoleUI\RentACar.ConsoleUI.csproj", "{85AEFB97-9EEE-400A-AD3D-8BB729E12069}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.ConsoleUI", "RentACar.ConsoleUI\RentACar.ConsoleUI.csproj", "{85AEFB97-9EEE-400A-AD3D-8BB729E12069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Business", "RentACar.Business\RentACar.Business.csproj", "{FBD14522-134D-47BC-80FD-25FDCAD82F6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Business", "RentACar.Business\RentACar.Business.csproj", "{FBD14522-134D-47BC-80FD-25FDCAD82F6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Entities", "RentACar.Entities\RentACar.Entities.csproj", "{2788209B-D2CC-45F4-8E70-9666D114CE58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Entities", "RentACar.Entities\RentACar.Entities.csproj", "{2788209B-D2CC-45F4-8E70-9666D114CE58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.DataAccess", "RentACar.DataAccess\RentACar.DataAccess.csproj", "{8FFE1E16-3E9B-4985-87AE-C33FF5AFA632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.DataAccess", "RentACar.DataAccess\RentACar.DataAccess.csproj", "{8FFE1E16-3E9B-4985-87AE-C33FF5AFA632}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Core", "RentACar.Core\RentACar.Core.csproj", "{3426A830-716E-4438-8030-A8DA2EDA8446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Core", "RentACar.Core\RentACar.Core.csproj", "{3426A830-716E-4438-8030-A8DA2EDA8446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.API", "RentACar.API\RentACar.API.csproj", "{B3555567-9FE2-4B8A-8A7B-90A97A869602}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3426A830-716E-4438-8030-A8DA2EDA8446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3426A830-716E-4438-8030-A8DA2EDA8446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3426A830-716E-4438-8030-A8DA2EDA8446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3555567-9FE2-4B8A-8A7B-90A97A869602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3555567-9FE2-4B8A-8A7B-90A97A869602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3555567-9FE2-4B8A-8A7B-90A97A869602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3555567-9FE2-4B8A-8A7B-90A97A869602}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
