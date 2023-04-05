@@ -1,5 +1,6 @@
 ﻿using RentACar.Core.DataAccess;
 using RentACar.Entities.Concrete;
+using RentACar.Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace RentACar.DataAccess.Abstract
 {
     public interface ICustomerDal:IEntityRepository<Customer>
     {
+        List<CustomerDetailDto> GetDetailCustomer();
     }
 }

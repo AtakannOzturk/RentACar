@@ -22,6 +22,7 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
         public DbSet<Rental> Rentals { get; set; }
 
         public DbSet<CarImage> CarImages { get; set; }
+        public DbSet<User> Users { get; set; }
         
 
     }

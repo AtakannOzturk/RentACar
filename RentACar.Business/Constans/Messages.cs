@@ -15,5 +15,20 @@ namespace RentACar.Business.Constans
         public static string CarUpdated = "Araba güncellendi";
         public static string CarsListed = "Araba listelendi";
         internal static string RentalListed;
+        internal static string BrandAdded;
+        internal static string BrandDeleted;
+        internal static string BrandListed;
+        internal static string BrandModified;
+        internal static string ColorAdded;
+        internal static string ColorDeleted;
+        internal static string ColorModified;
+        internal static string ColorListed;
+        internal static string CustomerAdded;
+        internal static string CustomerModified;
+        internal static string CustomerDeleted;
+        internal static string CustomerListed;
+        internal static string UserModified;
+        internal static string UserDeleted;
+        internal static string UserAdded;
     }
 }

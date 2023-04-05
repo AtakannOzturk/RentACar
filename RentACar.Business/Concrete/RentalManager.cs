@@ -42,7 +42,8 @@ namespace RentACar.Business.Concrete
 
         public IDataResult<List<RentalDetailDto>> GetRentalDetails()
         {
-            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails);
+            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetailsDto(),
+                Messages.RentalListed);
         }
 
         public IResult Update(Rental rental)

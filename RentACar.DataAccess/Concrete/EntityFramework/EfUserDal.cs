@@ -13,6 +13,6 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
 {
     public class EfUserDal : EfEntityRepositoryBase<User, RentACarContext>, IUserDal
     {
-        
+       
     }
 }
