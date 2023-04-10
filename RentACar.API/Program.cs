@@ -1,5 +1,8 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using RentACar.Business.Abstract;
 using RentACar.Business.Concrete;
+using RentACar.Business.DependencyResolvers.Autofac;
 using RentACar.DataAccess.Abstract;
 using RentACar.DataAccess.Concrete.EntityFramework;
 
@@ -12,30 +15,35 @@ namespace WebAPI
 
          var builder = WebApplication.CreateBuilder(args);
 
-         // Add services to the container.
+         builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
+                .ConfigureContainer<ContainerBuilder>(p =>
+          p.RegisterModule(new AutofacBusinessModule())
+         );
 
-         builder.Services.AddControllers();
+            // Add services to the container.
+
+            builder.Services.AddControllers();
          // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
          builder.Services.AddEndpointsApiExplorer();
          builder.Services.AddSwaggerGen();
 
-         builder.Services.AddSingleton<ICarService, CarManager>();
-         builder.Services.AddSingleton<ICarDal, EfCarDal>();
+         //builder.Services.AddSingleton<ICarService, CarManager>();
+         //builder.Services.AddSingleton<ICarDal, EfCarDal>();
 
-         builder.Services.AddSingleton<IRentalService, RentalManager>();
-         builder.Services.AddSingleton<IRentalDal, EfRentalDal>();
+         //builder.Services.AddSingleton<IRentalService, RentalManager>();
+         //builder.Services.AddSingleton<IRentalDal, EfRentalDal>();
 
-         builder.Services.AddSingleton<IColorService, ColorManager>();
-         builder.Services.AddSingleton<IColorDal, EfColorDal>();
+         //builder.Services.AddSingleton<IColorService, ColorManager>();
+         //builder.Services.AddSingleton<IColorDal, EfColorDal>();
 
-         builder.Services.AddSingleton<IBrandService, BrandManager>();
-         builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
+         //builder.Services.AddSingleton<IBrandService, BrandManager>();
+         //builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
 
-         builder.Services.AddSingleton<ICustomerService, CustomerManager>();
-         builder.Services.AddSingleton<ICustomerDal, EfCustomerDal>();
+         //builder.Services.AddSingleton<ICustomerService, CustomerManager>();
+         //builder.Services.AddSingleton<ICustomerDal, EfCustomerDal>();
         
-         builder.Services.AddSingleton<IUserService, UserManager>();
-         builder.Services.AddSingleton<IUserDal, EfUserDal>();
+         //builder.Services.AddSingleton<IUserService, UserManager>();
+         //builder.Services.AddSingleton<IUserDal, EfUserDal>();
 
 
          var app = builder.Build();
