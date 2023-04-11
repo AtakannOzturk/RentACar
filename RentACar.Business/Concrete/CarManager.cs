@@ -10,6 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
+using RentACar.Business.DependencyResolvers.ValidationRules.FluentValidation;
+using RentACar.Core.CrossCuttingConcerns.Validation;
 
 namespace RentACar.Business.Concrete
 {
@@ -24,10 +27,8 @@ namespace RentACar.Business.Concrete
 
         public IResult Add(Car car)
         {
-            if (car.CarName.Length<2) 
-            {
-                return new ErrorResult(Messages.CarNameInvalid);
-            }
+            ValidationTool.Validate(new CarValidator(), car);
+
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
         }
