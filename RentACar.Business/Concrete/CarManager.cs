@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using RentACar.Business.DependencyResolvers.ValidationRules.FluentValidation;
 using RentACar.Core.CrossCuttingConcerns.Validation;
+using RentACar.Core.Aspects.Autofac.Validation;
 
 namespace RentACar.Business.Concrete
 {
@@ -24,11 +25,10 @@ namespace RentACar.Business.Concrete
             _carDal = carDal;
 
         }
-
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-            ValidationTool.Validate(new CarValidator(), car);
-
+           
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
         }
