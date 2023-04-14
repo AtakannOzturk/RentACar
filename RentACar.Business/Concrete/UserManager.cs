@@ -1,9 +1,8 @@
-﻿using RentACar.Business.Abstract;
-using RentACar.Business.Constans;
-using RentACar.Core.Utilities.Results;
+﻿using Microsoft.AspNetCore.Identity;
+using RentACar.Business.Abstract;
+using RentACar.Core.Aspects.Autofac.Validation;
+using RentACar.Core.Entities.Concrete;
 using RentACar.DataAccess.Abstract;
-using RentACar.DataAccess.Concrete.EntityFramework;
-using RentACar.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,44 +11,31 @@ using System.Threading.Tasks;
 
 namespace RentACar.Business.Concrete
 {
-    public class UserManager : IUserService
+    public class UserManager:IUserService
     {
-        IUserDal _userDal;
+        private IUserDal _userDal;
+
         public UserManager(IUserDal userDal)
         {
             _userDal = userDal;
         }
 
-        public IResult Add(User user)
+
+        public List<OperationClaim> GetClaims(User user)
+        {
+            return _userDal.GetClaims(user);
+        }
+
+        [ValidationAspect(typeof(UserValidator))]
+        public void Add(User user)
         {
             _userDal.Add(user);
-            return new SuccessResult(Messages.UserAdded);
+
         }
 
-        public IResult Delete(User user)
+        public User GetByMail(string email)
         {
-            _userDal.Delete(user);
-
-            return new SuccessResult(Messages.UserDeleted);
-        }
-
-        public IDataResult<List<User>> GetAll()
-        {
-            return new SuccessDataResult<List<User>>(_userDal.GetAll());
-        }
-
-        public IDataResult<User> GetById(int id)
-        {
-            return new SuccessDataResult<User>(_userDal.Get(x => x.Id == id));
-        }
-
-              
-
-        public IResult Update(User user)
-        {
-            _userDal.Update(user);
-
-            return new SuccessResult(Messages.UserModified);
+            return _userDal.Get(u => u.Email == email);
         }
     }
 }
