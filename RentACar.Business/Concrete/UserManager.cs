@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using RentACar.Business.Abstract;
+using RentACar.Business.DependencyResolvers.ValidationRules.FluentValidation;
 using RentACar.Core.Aspects.Autofac.Validation;
 using RentACar.Core.Entities.Concrete;
 using RentACar.DataAccess.Abstract;
