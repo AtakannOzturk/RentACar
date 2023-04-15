@@ -14,6 +14,7 @@ using FluentValidation;
 using RentACar.Business.DependencyResolvers.ValidationRules.FluentValidation;
 using RentACar.Core.CrossCuttingConcerns.Validation;
 using RentACar.Core.Aspects.Autofac.Validation;
+using RentACar.Business.BusinessAspects.Autofac;
 
 namespace RentACar.Business.Concrete
 {
@@ -25,6 +26,7 @@ namespace RentACar.Business.Concrete
             _carDal = carDal;
 
         }
+        [SecuredOperation("car.add")]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {

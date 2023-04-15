@@ -39,9 +39,6 @@ namespace RentACar.Business.Constans
         public static string UserModified;
         public static string UserDeleted;
         public static string UserAdded;
-
-       
-      
-        
+        public static string AuthorizationDenied = "Yetkiniz yok";
     }
 }
