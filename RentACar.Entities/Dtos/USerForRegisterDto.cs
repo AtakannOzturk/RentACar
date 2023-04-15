@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.Entities.Dtos
 {
-    public class USerForRegisterDto:IDto
+    public class UserForRegisterDto:IDto
     {
         public string Email { get; set; }
         public string Password { get; set; }
