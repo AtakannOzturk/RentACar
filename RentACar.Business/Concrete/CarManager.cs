@@ -15,8 +15,8 @@ using RentACar.Business.DependencyResolvers.ValidationRules.FluentValidation;
 using RentACar.Core.CrossCuttingConcerns.Validation;
 using RentACar.Core.Aspects.Autofac.Validation;
 using RentACar.Business.BusinessAspects.Autofac;
-using RentACar.Core.Aspects.Caching;
 using RentACar.Core.Aspects.Autofac.Transaction;
+using RentACar.Core.Aspects.Autofac.Caching;
 
 namespace RentACar.Business.Concrete
 {
