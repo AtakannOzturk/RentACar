@@ -20,5 +20,7 @@ namespace RentACar.Business.Abstract
         IResult Delete(Car car);
         IDataResult<Car> GetById(int carid);
 
+        IResult AddTransactionalTest(Car car);
+
     }
 }

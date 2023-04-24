@@ -15,6 +15,8 @@ using RentACar.Business.DependencyResolvers.ValidationRules.FluentValidation;
 using RentACar.Core.CrossCuttingConcerns.Validation;
 using RentACar.Core.Aspects.Autofac.Validation;
 using RentACar.Business.BusinessAspects.Autofac;
+using RentACar.Core.Aspects.Caching;
+using RentACar.Core.Aspects.Autofac.Transaction;
 
 namespace RentACar.Business.Concrete
 {
@@ -28,11 +30,25 @@ namespace RentACar.Business.Concrete
         }
         [SecuredOperation("car.add")]
         [ValidationAspect(typeof(CarValidator))]
+        [CacheRemoveAspect("ICarService.Get")]
         public IResult Add(Car car)
         {
            
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
+        }
+
+        [TransactionScopeAspect]
+        public IResult AddTransactionalTest(Car car)
+        {
+            Add(car);
+            if (car.ModelYear < 7)
+            {
+                throw new Exception("");
+            }
+
+            Add(car);
+            return null;
         }
 
         public IResult Delete(Car car)
@@ -41,11 +57,13 @@ namespace RentACar.Business.Concrete
             return new SuccessResult(Messages.CarDeleted);
         }
 
+        [CacheAspect]
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>> (_carDal.GetAll());
         }
 
+        [CacheAspect]
         public IDataResult<Car> GetById(int carid)
         {
             return new SuccessDataResult<Car>(_carDal.Get(c=>c.Id == carid));
@@ -66,6 +84,8 @@ namespace RentACar.Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll().Where(p => p.ColorId == colorId).ToList(), Messages.CarsListed);
         }
 
+        [ValidationAspect(typeof(CarValidator))]
+        [CacheRemoveAspect("ICarService.Get")]
         public IResult Update(Car car)
         {
             _carDal.Update(car);
