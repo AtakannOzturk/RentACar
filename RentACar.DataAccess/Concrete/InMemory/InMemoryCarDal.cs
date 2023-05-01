@@ -13,7 +13,7 @@ namespace RentACar.DataAccess.Concrete.InMemory
     public class InMemoryCarDal : ICarDal
     {
         List<Car> _cars;
-        public InMemoryCarDal(Car car)
+        public InMemoryCarDal(Car car) 
         {
             _cars = new List<Car> {
 
